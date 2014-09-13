@@ -9,7 +9,7 @@ node index.js --learn path --quantity num [--window dimensionality] [--start tok
 
 Learn from `path`, either a file or directory (recursively on files), and then generate (up to, not guaranteed) `num` tokens in  Markov-ish process.
 
-Optionally, process `dimensionality`-grams rather than bigrams.
+Optionally, process `dimensionality`+1-grams rather than bigrams.
 
 To (try to) start with a particular token, pass (optionally) `token`.
 
