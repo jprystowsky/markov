@@ -4,12 +4,12 @@ markov
 Because I am apparently obsessed with Markov text generators.
 
 ```
-node index.js --learn path --quantity num [--window num] [--start token]
+node index.js --learn path --quantity num [--window dimensionality] [--start token]
 ```
 
 Learn from `path`, either a file or directory (recursively on files), and then generate (up to, not guaranteed) `num` tokens in  Markov-ish process.
 
-Optionally, process `num`-grams rather than bigrams.
+Optionally, process `dimensionality`-grams rather than bigrams.
 
 To (try to) start with a particular token, pass (optionally) `token`.
 
