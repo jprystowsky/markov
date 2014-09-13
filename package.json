@@ -1,0 +1,30 @@
+{
+  "name": "markov",
+  "version": "0.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jprystowsky/markov"
+  },
+  "keywords": [
+    "Markov",
+    "text",
+    "generator"
+  ],
+  "author": "jprystowsky",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/jprystowsky/markov/issues"
+  },
+  "homepage": "https://github.com/jprystowsky/markov",
+  "dependencies": {
+    "lodash": "^2.4.1",
+    "optimist": "^0.6.1",
+    "q": "^1.0.1",
+    "recursive-readdir": "^1.2.0"
+  }
+}
