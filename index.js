@@ -34,6 +34,9 @@
 	function startMarkov(files) {
 		learnFiles(files)
 			.then(babble)
+			.then(function (words) {
+				console.log(words.join(' '));
+			})
 			.done();
 	}
 
@@ -65,12 +68,14 @@
 	}
 
 	function babble(projection) {
+		var defer = Q.defer();
+
 		var generatedTokens = [];
 
 		var lastToken = argv.start ? argv.start :  _(projection).keys().shuffle().first();
 		generatedTokens.push(lastToken);
 
-		for (var i = 0; i < argv.quantity - 1; i++) {
+		for (var i = 0; i < Math.floor((argv.quantity - 1) / (argv.window || 1)); i++) {
 			var nextTokens = _(projection[lastToken]).shuffle().first();
 
 			if (_.isArray(nextTokens) && nextTokens.length > 0) {
@@ -82,7 +87,9 @@
 			}
 		}
 
-		console.log(generatedTokens.join(' '));
+		defer.resolve(generatedTokens);
+
+		return defer.promise;
 	}
 
 	function checkArgv() {
